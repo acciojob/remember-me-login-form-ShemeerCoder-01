@@ -2,6 +2,10 @@
 
 document.getElementById("submit").addEventListener('click',myFunc);
 document.getElementById("existing").addEventListener('click',exisFunc);
+if(localStorage.getItem("username") && localStorage.getItem("password")){
+	document.getElementById("form").style.display = "none";
+	document.getElementById("existing").style.display = "block";
+}
 
 function exisFunc(){
 	let name = JSON.parse(localStorage.getItem("username"));
@@ -16,8 +20,9 @@ function myFunc(){
 		if(username && pass){
 		localStorage.setItem("username",JSON.stringify(username));
 		localStorage.setItem("password",JSON.stringify(pass));
-		alert(`Logged in as ${username}`);
 		}
+	}else{
+		alert(`Logged in as ${username}`);
 	}
 	
 }
