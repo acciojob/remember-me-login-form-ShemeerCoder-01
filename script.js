@@ -1,12 +1,12 @@
 //your JS code here. If required.
 let checkbox = document.getElementById("checkbox");
 let form = document.getElementById("form");
-
 checkbox.addEventListener('click',()=>{
 		if(!checkbox.checked){
 		// alert(checkbox.checked);
 		localStorage.removeItem("password");
 		localStorage.removeItem("username");
+		document.getElementById("existing").style.display = "none";
 	}	
 });
 
@@ -31,10 +31,11 @@ function myFunc(e){
 	if(checkbox.checked){
 		localStorage.setItem("username",JSON.stringify(username));
 		localStorage.setItem("password",JSON.stringify(pass));
+		document.getElementById("existing").style.display = "block";
 		
 	}else{
 		alert(`Logged in as ${username}`);
+		document.getElementById("existing").style.display = "none";
 	}
 	
 }
-window.reload.preventDefault();
