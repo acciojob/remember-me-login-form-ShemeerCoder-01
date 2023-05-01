@@ -37,3 +37,4 @@ function myFunc(e){
 	}
 	
 }
+window.preventDefault();
