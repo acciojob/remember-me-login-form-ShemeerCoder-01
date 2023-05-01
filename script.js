@@ -1,17 +1,18 @@
 //your JS code here. If required.
 let checkbox = document.getElementById("checkbox");
-checkbox.addEventListener('input',()=>{
+function check(){
 	if(checkbox.checked){
 		checkbox.checked = false;
+		localStorage.removeItem("username");
+	    localStorage.removeItem("password");
+		
 	}else{
 		checkbox.checked = true;
 	}
-});
-
-if(!checkbox.checked){
-	localStorage.removeItem("username");
-	localStorage.removeItem("password");
 }
+
+
+
 
 document.getElementById("submit").addEventListener('click',myFunc);
 document.getElementById("existing").addEventListener('click',exisFunc);
