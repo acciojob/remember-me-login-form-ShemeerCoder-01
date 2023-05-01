@@ -37,4 +37,4 @@ function myFunc(e){
 	}
 	
 }
-window.preventDefault();
+window.reload.preventDefault();
